@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gallery</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+    <header>
+        <h1>Our Video Collection</h1>
+    </header>
+
+    <main>
+        <div id="video-gallery" class="gallery-container" aria-live="polite">
+            <!-- Videos will be dynamically loaded here -->
+        </div>
+        <div id="loading-indicator" role="status" aria-label="Loading videos">
+            <p>Loading videos...</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Video Website. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

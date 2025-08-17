@@ -1,0 +1,137 @@
+/* Basic Reset & Global Styles */
+:root {
+    --primary-bg: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --header-color: #2c3e50;
+    --footer-color: #7f8c8d;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --gap: 20px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header and Footer */
+header, footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--header-color);
+}
+
+header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+footer {
+    margin-top: 2rem;
+    color: var(--footer-color);
+    font-size: 0.9rem;
+}
+
+/* Masonry Gallery Container */
+main {
+    padding: 0 var(--gap);
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.gallery-container {
+    margin: 0 auto;
+    column-gap: var(--gap);
+}
+
+/* Responsive Columns */
+@media (min-width: 600px) {
+    .gallery-container {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 900px) {
+    .gallery-container {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 1200px) {
+    .gallery-container {
+        column-count: 4;
+    }
+}
+
+/* Video Card Styling */
+.video-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    margin-bottom: var(--gap);
+    overflow: hidden;
+    break-inside: avoid; /* Prevents cards from splitting across columns */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: inline-block; /* Required for column-break-inside to work */
+    width: 100%; /* Ensure it takes up full column width */
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.video-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.video-thumbnail {
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    background-color: #e0e0e0;
+    background-image: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc),
+                      linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-info {
+    padding: 15px;
+}
+
+.video-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+}
+
+.video-info p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Loading Indicator */
+#loading-indicator {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #777;
+}
+
+#loading-indicator.hidden {
+    display: none;
+}
